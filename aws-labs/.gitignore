@@ -1,0 +1,15 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+crash.log
+
+# Biến nhạy cảm — chỉ commit file example
+*.tfvars
+!*.tfvars.example
+
+# OS
+.DS_Store
+Thumbs.db
