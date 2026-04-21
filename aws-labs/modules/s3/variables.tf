@@ -1,53 +1,31 @@
-variable "project_name" { // tên project
-  description = "Project name for naming resources"
-  type        = string
-}
-
-variable "common_tags" {
-  description = "Tags applied to all resources"
-  type        = map(string)
-  default     = {}
+variable "project_name" {
+  type = string
 }
 
 variable "environment" {
-  description = "Environment name (dev, test, prod)"
-  type        = string
+  type    = string
+  default = "lab"
 }
 
-variable "block_public_acls" {
-  description = "Block public access to S3 bucket"
+variable "block_public_access" {
+  description = "Block all public access to bucket"
   type        = bool
   default     = true
 }
-
-
-variable "block_public_policy" {
-  description = "Block public access to S3 bucket"
-  type        = bool
-  default     = true
-}
-
-variable "ignore_public_acls" {
-  description = "Ignore public ACLs for S3 bucket"
-  type        = bool
-  default     = true
-}
-
-variable "restrict_public_buckets" {
-  description = "Restrict public buckets for S3 bucket"
-  type        = bool
-  default     = true
-}
-
 
 variable "enable_versioning" {
-  description = "Enable versioning for S3 bucket"
+  description = "Enable versioning on bucket"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "enable_website" {
-  description = "Enable static website hosting for S3 bucket"
+  description = "Enable static website hosting"
   type        = bool
   default     = false
+}
+
+variable "common_tags" {
+  type    = map(string)
+  default = {}
 }
